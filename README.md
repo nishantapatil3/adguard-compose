@@ -41,18 +41,11 @@ Point your system DNS to `127.0.0.1` so all DNS queries go through AdGuard for f
 7. Type `127.0.0.1` and press Enter
 8. Click **OK** to save
 
-**Example Screenshot:**
+**Visual Guide:**
 
-Your DNS settings should look like this:
+![macOS DNS Configuration](docs/images/macos-dns-setup.png)
 
-```
-DNS Servers
-Encrypted DNS Servers or IP addresses
-
-127.0.0.1
-```
-
-The connection status should show a green dot with "Connected" when properly configured.
+Your DNS settings should look like the screenshot above - with `127.0.0.1` added as a DNS server. The connection status should show a green dot with "Connected" when properly configured.
 
 ### macOS CLI Method
 
