@@ -1,0 +1,5 @@
+# AdGuard data directories
+data/
+
+# Docker
+.env

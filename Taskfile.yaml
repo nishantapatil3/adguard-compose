@@ -1,0 +1,44 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Copy config file to data directory
+    cmds:
+      - mkdir -p data/conf
+      - cp AdGuardHome.yaml data/conf/AdGuardHome.yaml
+    silent: false
+
+  up:
+    desc: Start AdGuard Home
+    deps: [setup]
+    cmds:
+      - docker-compose up -d
+      - echo "AdGuard Home is running at http://127.0.0.1"
+
+  down:
+    desc: Stop AdGuard Home
+    cmds:
+      - docker-compose down
+
+  restart:
+    desc: Restart AdGuard Home
+    cmds:
+      - task: down
+      - task: up
+
+  logs:
+    desc: View AdGuard Home logs
+    cmds:
+      - docker-compose logs -f
+
+  clean:
+    desc: Stop and remove all data (DESTRUCTIVE)
+    prompt: This will delete all AdGuard data including settings and query logs. Continue?
+    cmds:
+      - docker-compose down
+      - rm -rf data/
+
+  status:
+    desc: Show container status
+    cmds:
+      - docker-compose ps
