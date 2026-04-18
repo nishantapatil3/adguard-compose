@@ -54,3 +54,8 @@ tasks:
     cmds:
       - sudo networksetup -setdnsservers Wi-Fi "Empty"
       - echo "DNS restored to automatic settings"
+
+  get-dns:
+    desc: Show current DNS servers (Wi-Fi)
+    cmds:
+      - networksetup -getdnsservers Wi-Fi
