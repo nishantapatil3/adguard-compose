@@ -42,3 +42,15 @@ tasks:
     desc: Show container status
     cmds:
       - docker-compose ps
+
+  install-dns:
+    desc: Configure macOS to use AdGuard DNS (Wi-Fi)
+    cmds:
+      - sudo networksetup -setdnsservers Wi-Fi 127.0.0.1
+      - echo "DNS configured to use AdGuard Home at 127.0.0.1"
+
+  uninstall-dns:
+    desc: Restore original DNS settings (Wi-Fi)
+    cmds:
+      - sudo networksetup -setdnsservers Wi-Fi "Empty"
+      - echo "DNS restored to automatic settings"
